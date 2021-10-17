@@ -3,8 +3,12 @@ package calculator;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Input extends JPanel{
+public class Input extends JPanel implements ActionListener{
+	
+	private TheCalculator calculator;
 	
 	private JButton B0;
 	private JButton B1;
@@ -21,8 +25,9 @@ public class Input extends JPanel{
 	private JButton Bdiv;
 	private JButton Bmult;
 	
-	public Input()
+	public Input(TheCalculator calculator)
 	{
+		this.calculator = calculator;
 		B0 = new JButton("0");
 		B1 = new JButton("1");
 		B2 = new JButton("2");
@@ -52,6 +57,10 @@ public class Input extends JPanel{
 		this.add(Bminus);
 		this.add(Bdiv);
 		this.add(Bmult);
+		
+	}
+	public void actionPerformed(ActionEvent e)
+	{
 		
 	}
 }

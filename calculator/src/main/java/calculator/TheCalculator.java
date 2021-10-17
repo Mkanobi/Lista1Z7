@@ -91,4 +91,18 @@ public class TheCalculator {
 			}
 		}
 	}
+	public String getCurrent()
+	{
+		if (currentB)
+			return "  " + Double.toString(current);
+		else
+			return " ";
+	}
+	public String getBuffer()
+	{
+		if (bufferB)
+			return "  " + Double.toString(buffer) + " " + operation;
+		else
+			return " ";
+	}
 }

@@ -5,12 +5,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 public class Output extends JPanel{
 
+	private TheCalculator calculator;
+	
 	JLabel bufferLabel;
 	JLabel currentLabel;
-	public Output()
+	public void updateOutput()
 	{
-		bufferLabel = new JLabel("   buffer");
-		currentLabel = new JLabel("   current");
+		bufferLabel.setText(calculator.getBuffer());
+		currentLabel.setText(calculator.getCurrent());
+	}
+	public Output(TheCalculator calculator)
+	{
+		this.calculator = calculator;
+		bufferLabel = new JLabel(calculator.getBuffer());
+		currentLabel = new JLabel(calculator.getCurrent());
 		this.setLayout(new GridLayout(2,1));
 		this.add(bufferLabel);
 		this.add(currentLabel);
