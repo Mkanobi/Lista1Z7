@@ -15,19 +15,19 @@ public class Input extends JPanel implements ActionListener {
     private Output output;
 
     /** Tablica przycisków cyfr. */
-    private ArrayList<CButton> b;
+    private final ArrayList<CButton> b;
     /** Przycisk "+". */
-    private CButton bplus;
+    private final CButton bplus;
     /** Przycisk "-". */
-    private CButton bminus;
+    private final CButton bminus;
     /** Przycisk "/". */
-    private CButton bdiv;
+    private final CButton bdiv;
     /** Przycisk "*". */
-    private CButton bmult;
+    private final CButton bmult;
     /** Przycisk "=". */
-    private CButton beq;
+    private final CButton beq;
     /** Przycisk "<-". */
-    private CButton besc;
+    private final CButton besc;
     /** Constructor inputu.
      * @param calculator referencja na kalkulator
      * @param output referencja na output
@@ -85,22 +85,22 @@ public class Input extends JPanel implements ActionListener {
                 calculator.inputCurrent(i);
             }
         }
-        if (source == bplus) {
+        if (source.equals(bplus)) {
             calculator.inputOperation('+');
         }
-        if (source == bminus) {
+        if (source.equals(bminus)) {
             calculator.inputOperation('-');
         }
-        if (source == bmult) {
+        if (source.equals(bmult)) {
             calculator.inputOperation('*');
         }
-        if (source == bdiv) {
+        if (source.equals(bdiv)) {
             calculator.inputOperation('/');
         }
-        if (source == beq) {
+        if (source.equals(beq)) {
             calculator.equals();
         }
-        if (source == besc) {
+        if (source.equals(besc)) {
             calculator.delete();
         }
 
