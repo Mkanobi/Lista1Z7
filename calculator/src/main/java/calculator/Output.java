@@ -31,10 +31,10 @@ public class Output extends JPanel {
     /** Drugi wymiar layoutu. */
     public static final int GRID_SIZE2 = 24;
     /** Konstruktor Outputu.
-     * @param calculator referencja na logikę kalkulatora.
+     * @param calculatorR referencja na logikę kalkulatora.
      */
-    public Output(final TheCalculator calculator) {
-        this.calculator = calculator;
+    public Output(final TheCalculator calculatorR) {
+        this.calculator = calculatorR;
         bufferLabel = new JLabel(calculator.getBuffer());
         bufferLabel.setFont(new Font("Serif", Font.BOLD, FONT_SIZE));
         separator = new JLabel(" ");

@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import java.util.*;
+import java.util.ArrayList;
 
 
 public class Input extends JPanel implements ActionListener {
@@ -29,17 +29,16 @@ public class Input extends JPanel implements ActionListener {
     /** Przycisk "<-". */
     private final CButton besc;
     /** Constructor inputu.
-     * @param calculator referencja na kalkulator
-     * @param output referencja na output
+     * @param calculatorR referencja na kalkulator
+     * @param outputR referencja na output
      * */
-    public Input(final TheCalculator calculator, final Output output) {
-        
+    public Input(final TheCalculator calculatorR, final Output outputR) {
         b = new ArrayList<CButton>();
         for (int i = 0; i <= 9; i++) {
             b.add(new CButton(Integer.toString(i)));
         }
-        this.calculator = calculator;
-        this.output = output;
+        this.calculator = calculatorR;
+        this.output = outputR;
         bplus = new CButton("+");
         bminus = new CButton("-");
         bmult = new CButton("*");
