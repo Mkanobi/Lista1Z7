@@ -1,6 +1,7 @@
 package calculator;
 /** Klasa zawierająca logikę kalkulatora*/
-public class TheCalculator {
+public class TheCalculator 
+{
 	/** liczba buforowana*/
 	double buffer;
 	/** czy buforowana liczba istnieje*/
@@ -11,6 +12,8 @@ public class TheCalculator {
 	double current;
 	/** czy aktualnie wpisywana liczba istnieje*/
 	boolean currentB;
+	/** czy użytkownik może usuwać znaki z inputu*/
+	boolean deletable;
 	/** konstrukotr kalkulatora*/
 	public TheCalculator()
 	{
@@ -18,6 +21,8 @@ public class TheCalculator {
 		operation = ' ';
 		current = 0;
 		currentB = false;
+		deletable = false;
+		bufferB = false;
 	}
 	/** wczytywanie cyfr
 	 * @param cyfra
@@ -34,6 +39,7 @@ public class TheCalculator {
 			currentB = true;
 			current = input;
 		}
+		deletable = true;
 	}
 	/**
 	 * funkcja "="
@@ -61,6 +67,7 @@ public class TheCalculator {
 			bufferB=false;
 			buffer = 0;
 			operation = ' ';
+			deletable = false;
 		}
 	}
 	/** wczytywanie operatorów
@@ -107,5 +114,13 @@ public class TheCalculator {
 			return "  " + Double.toString(buffer) + " " + operation;
 		else
 			return " ";
+	}
+	public void delete()
+	{
+		if (deletable)
+		{
+			current -= current%10;
+			current /= 10;
+		}
 	}
 }

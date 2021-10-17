@@ -25,6 +25,8 @@ public class Input extends JPanel implements ActionListener{
 	private JButton Bminus;
 	private JButton Bdiv;
 	private JButton Bmult;
+	private JButton Beq;
+	private JButton Besc;
 	
 	public Input(TheCalculator calculator, Output output)
 	{
@@ -45,18 +47,22 @@ public class Input extends JPanel implements ActionListener{
 		Bminus = new JButton("-");
 		Bmult = new JButton("*");
 		Bdiv = new JButton("/");
+		Besc = new JButton("<-");
+		Beq = new JButton("=");
 		this.setLayout(new GridLayout(4,4));
 		this.add(B0);
 		this.add(B1);
 		this.add(B2);
+		this.add(Besc);
 		this.add(B3);
 		this.add(B4);
 		this.add(B5);
+		this.add(Beq);
 		this.add(B6);
 		this.add(B7);
 		this.add(B8);
-		this.add(B9);
 		this.add(Bplus);
+		this.add(B9);
 		this.add(Bminus);
 		this.add(Bdiv);
 		this.add(Bmult);
@@ -74,6 +80,8 @@ public class Input extends JPanel implements ActionListener{
 		Bminus.addActionListener(this);
 		Bmult.addActionListener(this);
 		Bdiv.addActionListener(this);
+		Besc.addActionListener(this);
+		Beq.addActionListener(this);
 		
 	}
 	public void actionPerformed(ActionEvent e)
@@ -134,6 +142,14 @@ public class Input extends JPanel implements ActionListener{
 		if (source == Bdiv)
 		{
 			calculator.inputOperation('/');
+		}
+		if (source == Beq)
+		{
+			calculator.equals();
+		}
+		if (source == Besc)
+		{
+			calculator.delete();
 		}
 		
 		output.updateOutput();
