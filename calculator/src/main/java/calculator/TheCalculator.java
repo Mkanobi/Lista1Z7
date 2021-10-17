@@ -31,6 +31,7 @@ public class TheCalculator {
 		}
 		else
 		{
+			currentB = true;
 			current = input;
 		}
 	}
@@ -73,6 +74,7 @@ public class TheCalculator {
 			{
 				operation = input;
 				buffer = current;
+				bufferB=true;
 				currentB=false;
 				current =0;
 			
@@ -82,6 +84,7 @@ public class TheCalculator {
 				equals();
 				operation = input;
 				buffer = current;
+				bufferB=true;
 				currentB=false;
 				current =0;
 			}

@@ -13,6 +13,8 @@ public class Output extends JPanel{
 	{
 		bufferLabel.setText(calculator.getBuffer());
 		currentLabel.setText(calculator.getCurrent());
+		revalidate();
+		repaint();
 	}
 	public Output(TheCalculator calculator)
 	{

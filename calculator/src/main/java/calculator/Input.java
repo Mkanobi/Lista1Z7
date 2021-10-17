@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 public class Input extends JPanel implements ActionListener{
 	
 	private TheCalculator calculator;
+	private Output output;
 	
 	private JButton B0;
 	private JButton B1;
@@ -25,9 +26,11 @@ public class Input extends JPanel implements ActionListener{
 	private JButton Bdiv;
 	private JButton Bmult;
 	
-	public Input(TheCalculator calculator)
+	public Input(TheCalculator calculator, Output output)
 	{
+		
 		this.calculator = calculator;
+		this.output = output;
 		B0 = new JButton("0");
 		B1 = new JButton("1");
 		B2 = new JButton("2");
@@ -57,10 +60,82 @@ public class Input extends JPanel implements ActionListener{
 		this.add(Bminus);
 		this.add(Bdiv);
 		this.add(Bmult);
+		B0.addActionListener(this);
+		B1.addActionListener(this);
+		B2.addActionListener(this);
+		B3.addActionListener(this);
+		B4.addActionListener(this);
+		B5.addActionListener(this);
+		B6.addActionListener(this);
+		B7.addActionListener(this);
+		B8.addActionListener(this);
+		B9.addActionListener(this);
+		Bplus.addActionListener(this);
+		Bminus.addActionListener(this);
+		Bmult.addActionListener(this);
+		Bdiv.addActionListener(this);
 		
 	}
 	public void actionPerformed(ActionEvent e)
 	{
+		Object source = e.getSource();
+		if (source == B0)
+		{
+			calculator.inputCurrent(0);
+		}
+		if (source == B1)
+		{
+			calculator.inputCurrent(1);
+		}
+		if (source == B2)
+		{
+			calculator.inputCurrent(2);
+		}
+		if (source == B3)
+		{
+			calculator.inputCurrent(3);
+		}
+		if (source == B4)
+		{
+			calculator.inputCurrent(4);
+		}
+		if (source == B5)
+		{
+			calculator.inputCurrent(5);
+		}
+		if (source == B6)
+		{
+			calculator.inputCurrent(6);
+		}
+		if (source == B7)
+		{
+			calculator.inputCurrent(7);
+		}
+		if (source == B8)
+		{
+			calculator.inputCurrent(8);
+		}
+		if (source == B9)
+		{
+			calculator.inputCurrent(9);
+		}
+		if (source == Bplus)
+		{
+			calculator.inputOperation('+');
+		}
+		if (source == Bminus)
+		{
+			calculator.inputOperation('-');
+		}
+		if (source == Bmult)
+		{
+			calculator.inputOperation('*');
+		}
+		if (source == Bdiv)
+		{
+			calculator.inputOperation('/');
+		}
 		
+		output.updateOutput();
 	}
 }

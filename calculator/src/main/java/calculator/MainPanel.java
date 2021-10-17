@@ -13,8 +13,8 @@ public class MainPanel extends JPanel{
 	public MainPanel()
 	{
 		calculator = new TheCalculator();
-		input = new Input(calculator);
 		output = new Output(calculator);
+		input = new Input(calculator,output);
 		this.setLayout(new BorderLayout());
 		//this.setLayout(new GridLayout(2,1));
 		this.add(output, BorderLayout.NORTH);
