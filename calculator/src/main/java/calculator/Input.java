@@ -62,7 +62,6 @@ public class Input extends JPanel implements ActionListener {
         this.add(bdiv);
         this.add(bmult);
         this.add(beq);
-        b.get(0).addActionListener(this);
         for (int i = 0; i <= 9; i++) {
             b.get(i).addActionListener(this);
         }
