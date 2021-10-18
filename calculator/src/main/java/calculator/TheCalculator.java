@@ -14,7 +14,7 @@ public class TheCalculator {
   private double current;
   /** Czy aktualnie wpisywana liczba istnieje. */
   private boolean currentB;
-  /** Czy użytkownik może usuwać znaki z inputu. */
+  /** Czy użytkownik może usuwać/dodawać znaki z inputu. */
   private boolean deletable;
 
     /** Konstrukotr kalkulatora. */
@@ -32,7 +32,7 @@ public class TheCalculator {
      * @param input cyfra
      */
     public void inputCurrent(final double input) {
-        if (currentB) {
+        if (currentB && deletable) {
             current *= BASE;
             current += input;
         } else {
