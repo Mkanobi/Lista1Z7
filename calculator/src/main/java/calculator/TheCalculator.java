@@ -2,6 +2,8 @@ package calculator;
 
 /** Klasa zawierająca logikę kalkulatora. */
 public class TheCalculator {
+  /** Baza liczb w kalkulatorze.*/
+  public static final int BASE = 10;
   /** Liczba buforowana. */
   private double buffer;
   /** Czy buforowana liczba istnieje. */
@@ -24,8 +26,6 @@ public class TheCalculator {
         deletable = false;
         bufferB = false;
     }
-    /** Baza liczb w kalkulatorze.*/
-    public static final int BASE = 10;
     /**
      * Wczytywanie cyfr.
      *
@@ -45,7 +45,7 @@ public class TheCalculator {
     /**
      * Funkcja "=".
      */
-    public void equals() {
+    public void equalsTo() {
         if (currentB && bufferB) {
             if (operation == '+') {
                 current = current + buffer;
@@ -80,7 +80,7 @@ public class TheCalculator {
                 current = 0;
 
             } else if (currentB && bufferB) {
-                equals();
+                equalsTo();
                 operation = input;
                 buffer = current;
                 bufferB = true;

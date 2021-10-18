@@ -97,7 +97,7 @@ public class Input extends JPanel implements ActionListener {
             calculator.inputOperation('/');
         }
         if (source.equals(beq)) {
-            calculator.equals();
+            calculator.equalsTo();
         }
         if (source.equals(besc)) {
             calculator.delete();
